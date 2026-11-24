@@ -1,0 +1,9 @@
+{
+  "status": "planned_not_device_validated",
+  "ep": [8, 16, 32, 64, 128, 256],
+  "targets": [0, 0.2, 1, 10, 20],
+  "strategies": ["off", "moonep", "ultraep"],
+  "common_shape": {"experts": 256, "top_k": 8, "hidden": 16, "ffn": 32, "tokens_per_rank": 4096},
+  "large_candidate": {"experts": 2048, "top_k": 16, "ffn": 4096, "tokens_per_rank": 4096},
+  "note": "Inventory only. Hidden size, native variants, precision/memory modes and actual topology must be audited before device execution."
+}

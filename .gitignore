@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+reports/
+*.pt
+.DS_Store
+/results/
+/deps/
+profiling/
+*_ascend_pt/
+PROF_*/

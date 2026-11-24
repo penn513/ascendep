@@ -1,0 +1,7 @@
+{
+  "experts": 4,
+  "top_k": 2,
+  "hidden": 16,
+  "ffn": 32,
+  "seed": 17
+}

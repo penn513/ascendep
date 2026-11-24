@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ascendep"
+version = "0.1.0"
+description = "Reproducible CPU expert-parallel MoE training validation"
+requires-python = ">=3.9"
+dependencies = ["torch>=2.2", "numpy>=1.24", "importlib-metadata>=4; python_version < '3.10'"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+ascendep = "ascendep.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ascendep*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

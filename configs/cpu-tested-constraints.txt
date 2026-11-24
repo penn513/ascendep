@@ -1,0 +1,5 @@
+# Core versions tested on macOS arm64, Python 3.9.6; not a transitive lockfile.
+torch==2.8.0
+numpy==2.0.2
+pytest==8.4.2
+importlib-metadata==8.7.1

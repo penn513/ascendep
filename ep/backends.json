@@ -1,0 +1,98 @@
+{
+  "allgather_hccl": {
+    "mode": "layer",
+    "scope": "HCCL AllGather / ReduceScatter routed MoE"
+  },
+  "allgather_fsdpturbo": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "allgather_megatron": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "alltoall_fsdpturbo": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "alltoall_hccl": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "alltoall_megatron": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "chunkmoe_fsdpturbo": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "deepep_ascend": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "domino_fsdpturbo": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "fused_fsdpturbo": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "mc2_fsdpturbo": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "megamoe_cann": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "megamoe_fsdpturbo": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "megamoe_lueelu": {
+    "mode": "layer",
+    "scope": "统一 EP2/EP8 routed MoE 前反向，须通过数值验收。"
+  },
+  "deepep_lueelu": {
+    "mode": "layer",
+    "scope": "Lueelu ElasticBuffer 展开式 dispatch/combine 与反向通信。"
+  },
+  "ep_gmm_fused_lueelu": {
+    "mode": "layer",
+    "scope": "Lueelu EP_GMM_FUSED UDMA 双向通算融合，包含路由、专家计算与显式反向。"
+  },
+  "moonep": {
+    "mode": "layer",
+    "scope": "MoonEP UDMA 固定专家归属，通信偏移构造计入前向。"
+  },
+  "alltoallv_gmm_cann": {
+    "mode": "layer",
+    "scope": "通过 torch_npu 直接调用 CANN AlltoAllvGMM 和 GMMAlltoAllv，包含显式训练反向。"
+  },
+  "mc2_dispatch_cann": {
+    "mode": "layer",
+    "scope": "Ascend 950DT 单次 BS 上限 512。4K 采用 8 次 DispatchV2/CombineV2，梯度使用相反方向的通信。"
+  },
+  "deepep_cann": {
+    "mode": "layer",
+    "scope": "CANN 9.2.1 ElasticBuffer 的 MoE EP Dispatch、Combine 及两道 epilogue，使用原生通信反向。"
+  },
+  "hierarchical_alltoallv_mindspeed": {
+    "mode": "unsupported",
+    "scope": "上游要求多机，本轮使用单机 TP1。"
+  },
+  "allgather_overlap_mindspeed": {
+    "mode": "layer",
+    "scope": "原生异步 AllGather、GroupedMLP 及 ReduceScatter，固定路由前反向。"
+  },
+  "megamoe_td": {
+    "mode": "layer",
+    "scope": "原生 MegaMoEFunction、Ascend Triton-distributed 和 ACLSHMEM。固定 trace 在计时前检查 SwiGLU 限幅等价性。"
+  },
+  "deepep_sglang": {
+    "mode": "layer",
+    "scope": "SGLang 原生节点内 dispatch/combine，HCCL 汇集路由权重，执行训练前反向。"
+  }
+}
